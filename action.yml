@@ -1,0 +1,21 @@
+name: "SAST-action"
+author: ivankuchin
+description: "This is the main web site for flawfinder, a simple program that examines C/C++ source code and reports possible security weaknesses (“flaws”) sorted by risk level."
+
+inputs:
+  github_token:
+    description: "GITHUB_TOKEN"
+    required: true
+
+  data_only:
+    description: "Don’t display the header and footer."
+    default: "true"
+    required: false
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+
+branding:
+  icon: "life-buoy"
+  color: "blue"
