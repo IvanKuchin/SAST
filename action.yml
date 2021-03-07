@@ -3,8 +3,8 @@ author: ivankuchin
 description: "This is the main web site for flawfinder, a simple program that examines C/C++ source code and reports possible security weaknesses (“flaws”) sorted by risk level."
 
 inputs:
-  github_token:
-    description: "GITHUB_TOKEN"
+  GITHUB_TOKEN:
+    description: "GITHUB_TOKEN (automatically assinged by GitHub)"
     required: true
 
   data_only:
