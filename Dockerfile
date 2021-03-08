@@ -11,7 +11,7 @@ LABEL maintainer="ivan.kuchin@gmail.com"
 RUN apt-get update
 RUN apt-get -qq -y install curl jq
 
-RUN pip install flowfinder
+RUN pip install flawfinder
 
 COPY ./src/entrypoint.sh /entrypoint.sh
 COPY ./src/log.sh /log.sh
