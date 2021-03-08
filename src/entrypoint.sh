@@ -3,7 +3,7 @@
 ############
 # DEFAULTS #
 ############
-GITHUB_TOKEN="${GITHUB_TOKEN}"
+GITHUB_TOKEN="${INPUT_GITHUB_TOKEN}"
 GITHUB_API='https://api.github.com' 		# API url
 GITHUB_EVENT_NAME="${GITHUB_EVENT_NAME}"	# push or pull
 GITHUB_EVENT_PATH="${GITHUB_EVENT_PATH}"	# The path of the file with the complete webhook event payload.
