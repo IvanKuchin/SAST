@@ -1,2 +1,2 @@
 # SAST Github action
-C/C++ SAST (Static application security testing) via Flawfinder
+C/C++ SAST (Static Application Security Testing) via Flawfinder
