@@ -11,8 +11,8 @@ GITHUB_EVENT_PATH="${GITHUB_EVENT_PATH}"	# The path of the file with the complet
 #########################
 # Flawfinder parameters #
 #########################
-dataonly="${INPUT_dataonly}"            	# Flawfinder --dataonly
-source_code="${INPUT_source_code}"      	# Flawfinder source code file or source root directory
+DATAONLY="${INPUT_DATAONLY}"            	# Flawfinder --DATAONLY
+SOURCE_CODE="${INPUT_SOURCE_CODE}"      	# Flawfinder source code file or source root directory
 
 ###########
 # Globals #
@@ -39,18 +39,18 @@ CheckInputValidity() {
 		fatal "The GITHUB_TOKEN is required."
 	fi
 	
-    if [ -z "${dataonly}" ]; then
-      error "Failed to get [dataonly]!"
-      fatal "[${dataonly}]"
+    if [ -z "${DATAONLY}" ]; then
+      error "Failed to get [DATAONLY]!"
+      fatal "[${DATAONLY}]"
     else
-      info "Successfully found:${F[W]}[dataonly]${F[B]}, value:${F[W]}[${dataonly}]"
+      info "Successfully found:${F[W]}[DATAONLY]${F[B]}, value:${F[W]}[${DATAONLY}]"
     fi
 
-    if [ -z "${source_code}" ]; then
-      error "Failed to get [source_code]!"
-      fatal "[${source_code}]"
+    if [ -z "${SOURCE_CODE}" ]; then
+      error "Failed to get [SOURCE_CODE]!"
+      fatal "[${SOURCE_CODE}]"
     else
-      info "Successfully found:${F[W]}[source_code]${F[B]}, value:${F[W]}[${source_code}]"
+      info "Successfully found:${F[W]}[SOURCE_CODE]${F[B]}, value:${F[W]}[${SOURCE_CODE}]"
     fi
 
     if [ -z "${GITHUB_EVENT_NAME}" ]; then
@@ -91,7 +91,7 @@ BuildShellCommands() {
 	info "----------- BuildShellCommands -------------"
 	info "--------------------------------------------"
 
-	shell_command1="flawfinder --dataonly --quiet ${source_code}"
+	shell_command1="flawfinder --DATAONLY --quiet ${SOURCE_CODE}"
 
 	info "${shell_command1}"
 }
