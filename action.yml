@@ -7,9 +7,14 @@ inputs:
     description: "GITHUB_TOKEN (automatically assinged by GitHub)"
     required: true
 
-  data_only:
+  dataonly:
     description: "Don’t display the header and footer."
     default: "true"
+    required: false
+
+  source_code:
+    description: "Source code folder or file to check."
+    default: "./"
     required: false
 
 runs:
