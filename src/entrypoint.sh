@@ -145,7 +145,7 @@ AddComment() {
 	__output+=$'\n```\n'
 	__output+="$output1"
 	__output+=$'\n```\n'
-	PAYLOAD=$(echo '{}' | jq --arg body "$output1" '.body = $body')
+	PAYLOAD=$(echo '{}' | jq --arg body "$__output" '.body = $body')
 
 	if [[ "${GITHUB_EVENT_NAME}" == "pull" ]]; then
 
