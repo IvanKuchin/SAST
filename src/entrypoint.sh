@@ -91,7 +91,7 @@ BuildShellCommands() {
 	info "----------- BuildShellCommands -------------"
 	info "--------------------------------------------"
 
-	shell_command1="flawfinder --DATAONLY --quiet ${SOURCE_CODE}"
+	shell_command1="flawfinder --dataonly --quiet ${SOURCE_CODE}"
 
 	info "${shell_command1}"
 }
@@ -141,6 +141,10 @@ AddComment() {
 	info "----------- AddComment -------------"
 	info "------------------------------------"
 
+	__output=$'**Flaws found**'
+	__output+=$'\n```\n'
+	__output+="$output1"
+	__output+=$'\n```\n'
 	PAYLOAD=$(echo '{}' | jq --arg body "$output1" '.body = $body')
 
 	if [[ "${GITHUB_EVENT_NAME}" == "pull" ]]; then
