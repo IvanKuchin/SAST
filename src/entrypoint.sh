@@ -133,7 +133,7 @@ RunShellCommands() {
 
 	output1=`${shell_command1}`
 
-	debug "${output1}"
+	trace "${output1}"
 }
 
 AddComment() {
@@ -147,7 +147,7 @@ AddComment() {
 	__output+=$'\n```\n'
 	PAYLOAD=$(echo '{}' | jq --arg body "$__output" '.body = $body')
 
-	if [[ "${GITHUB_EVENT_NAME}" == "pull" ]]; then
+	if [[ "${GITHUB_EVENT_NAME}" == "pull_request" ]]; then
 
 		COMMENTS_URL=$(cat $GITHUB_EVENT_PATH | jq -r .pull_request.comments_url)
 		curl -H "Authorization: token $GITHUB_TOKEN" --header "Content-Type: application/vnd.github.VERSION.text+json" --data "$PAYLOAD" "$COMMENTS_URL"
