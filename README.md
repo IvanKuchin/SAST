@@ -13,7 +13,7 @@ Not every hit is actually a security vulnerability, and not every security vulne
 
 Flawfinder is fundamentally a naive program; it doesn’t even know about the data types of function parameters, and it certainly **doesn’t do control flow or data flow analysis**.
 
-## How to mark flaw as reviewed
+## How to mark a flaw as reviewed
 
 Add comment to source code /\* Flawfinder ignore \*/ at a previous line or at the end-of-a-line
 
