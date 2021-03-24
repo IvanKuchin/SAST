@@ -1,6 +1,6 @@
 name: "SAST-action"
 author: ivankuchin
-description: "This is the main web site for flawfinder, a simple program that examines C/C++ source code and reports possible security weaknesses (“flaws”) sorted by risk level."
+description: "GitHub Action examines C/C++ source code and reports possible security weaknesses (“flaws”) sorted by risk level."
 
 inputs:
   GITHUB_TOKEN:
